@@ -1,0 +1,7 @@
+test:
+  key01: config/application.yml
+  key02: config/application.yml
+
+spring:
+  profiles:
+    active: dev

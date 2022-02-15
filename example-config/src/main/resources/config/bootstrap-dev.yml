@@ -1,0 +1,4 @@
+test:
+  key01: config/bootstrap-dev.yml
+  key02: config/bootstrap-dev.yml
+  key03: config/bootstrap-dev.yml

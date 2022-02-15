@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+jar.enabled true
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.6.2'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    implementation 'com.alibaba:fastjson:1.2.79'
+}
+
+test {
+    useJUnitPlatform()
+}

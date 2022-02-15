@@ -1,0 +1,16 @@
+
+test:
+  key01: config/bootstrap.yml
+  key02: config/bootstrap.yml
+  key03: config/bootstrap.yml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: example-config
+

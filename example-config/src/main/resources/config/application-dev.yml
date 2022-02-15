@@ -1,0 +1,2 @@
+test:
+  key01: config/application-dev.yml

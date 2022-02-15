@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationListener=\
+org.other.TestApplicationListener
+org.springframework.context.ApplicationContextInitializer=\
+org.other.TestApplicationContextInitializer
+org.springframework.boot.env.EnvironmentPostProcessor=\
+org.other.TestEnvironmentPostProcessor
