@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres
+    restart: always
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - /data/sonarqube/postgres/postgresql:/var/lib/postgresql
+      - /data/sonarqube/postgres/data:/var/lib/postgresql/data
+    environment:
+      TZ: Asia/Shanghai
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonar
+
+  sonar:
+    image: sonarqube:8.9.6-community
+    container_name: sonar
+    depends_on:
+      - postgres
+    volumes:
+      - /data/sonarqube/sonarqube/extensions:/opt/sonarqube/extensions
+      - /data/sonarqube/sonarqube/logs:/opt/sonarqube/logs
+      - /data/sonarqube/sonarqube/data:/opt/sonarqube/data
+      - /data/sonarqube/sonarqube/conf:/opt/sonarqube/conf
+    ports:
+      - 9000:9000
+    command:
+      - -Dsonar.ce.javaOpts=-Xmx512m
+      - -Dsonar.web.javaOpts=-Xmx512m
+    environment:
+      SONARQUBE_JDBC_USERNAME: sonar
+      SONARQUBE_JDBC_PASSWORD: sonar
+      SONARQUBE_JDBC_URL: jdbc:postgresql://postgres:5432/sonar

@@ -2,26 +2,26 @@ version: "3"
 
 services:
   eureka-server1:
-    image: yaml/eureka-server:latest
+    build: .
     ports:
       - "8761:8761"
     expose:
       - "8761"
     environment:
       - "SPRING_PROFILES_ACTIVE=8761"
-  eureka-server2:
-    image: yaml/eureka-server:latest
-    expose:
-      - "8762"
-    ports:
-      - "8762:8762"
-    environment:
-      - "SPRING_PROFILES_ACTIVE=8762"
-  eureka-server3:
-    image: yaml/eureka-server:latest
-    ports:
-      - "8763:8763"
-    expose:
-      - "8763"
-    environment:
-      - "SPRING_PROFILES_ACTIVE=8763"
+#  eureka-server2:
+#    build: .
+#    expose:
+#      - "8762"
+#    ports:
+#      - "8762:8762"
+#    environment:
+#      - "SPRING_PROFILES_ACTIVE=8762"
+#  eureka-server3:
+#    build: .
+#    ports:
+#      - "8763:8763"
+#    expose:
+#      - "8763"
+#    environment:
+#      - "SPRING_PROFILES_ACTIVE=8763"
